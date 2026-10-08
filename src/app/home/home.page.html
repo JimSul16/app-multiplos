@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-toolbar">
+    <ion-title>
+      Múltiplos de: <br>
+      <span style="font-size: 0.8em; font-weight: normal;">Andrés Caiza</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar class="custom-toolbar">
+      <ion-title size="large">Múltiplos de:</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="ion-padding">
+    <ion-card class="card-2">
+      <ion-card-header>
+        <ion-card-title>Múltiplo de 2</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="card-content">
+        <ion-badge class="contador-badge">{{ contador2 }}</ion-badge>
+        <ion-button class="custom-btn" (click)="incrementar(2)">+2</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="card-3">
+      <ion-card-header>
+        <ion-card-title>Múltiplo de 3</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="card-content">
+        <ion-badge class="contador-badge">{{ contador3 }}</ion-badge>
+        <ion-button class="custom-btn" (click)="incrementar(3)">+3</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="card-5">
+      <ion-card-header>
+        <ion-card-title>Múltiplo de 5</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="card-content">
+        <ion-badge class="contador-badge">{{ contador5 }}</ion-badge>
+        <ion-button class="custom-btn" (click)="incrementar(5)">+5</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="card-7">
+      <ion-card-header>
+        <ion-card-title>Múltiplo de 7</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="card-content">
+        <ion-badge class="contador-badge">{{ contador7 }}</ion-badge>
+        <ion-button class="custom-btn" (click)="incrementar(7)">+7</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="card-10">
+      <ion-card-header>
+        <ion-card-title>Múltiplo de 10</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="card-content">
+        <ion-badge class="contador-badge">{{ contador10 }}</ion-badge>
+        <ion-button class="custom-btn" (click)="incrementar(10)">+10</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="block" shape="round" class="primos-btn" (click)="generarPrimos()">
+      Mostrar Números Primos
+    </ion-button>
+
+    <ion-card *ngIf="mostrarPrimos" style="--background: #fff; margin-top: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      <ion-card-header>
+        <ion-card-title style="color: #333;">Primeros 25 Números Primos</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="primos-container">
+          <ion-badge *ngFor="let primo of primos" class="primo-badge">
+            {{ primo }}
+          </ion-badge>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
